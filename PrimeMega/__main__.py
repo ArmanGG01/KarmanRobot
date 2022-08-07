@@ -88,7 +88,7 @@ PM_START_TEXT = """
 ────────────────────────
 I'm a powerful group management bot built to help you manage your group!
 ────────────────────
-Hit the /help or tap on button to se available command on me.
+Hit the /help or tap on button to se available command on Me.
 """
 
 buttons = [
