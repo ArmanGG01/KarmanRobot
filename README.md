@@ -37,6 +37,7 @@
 ```console
 root@PrimeMega~ $ screen -S PrimeMega
 root@PrimeMega~ $ git clone https://github.com/Toni880/PrimeMega
+root@PrimeMega~ $ cd PrimeMega
 root@PrimeMega~ $ pip3 install -U -r requirements.txt
 root@PrimeMega~ $ cp prime.env .env
 root@PrimeMega~ $ nano .env
