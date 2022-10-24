@@ -475,8 +475,8 @@ def prime_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Tonic", url="t.me/Bukan_guudlooking"),
-                    InlineKeyboardButton(text="x~b", url="t.me/Xbarok"),
+                    InlineKeyboardButton(text="Arman", url="t.me/PakkPoll"),
+                    InlineKeyboardButton(text="Mex", url="t.me/KarmanRobot_bot"),
                  ],
                  [
                     InlineKeyboardButton(text="Go Back", callback_data="karman_"),
@@ -754,7 +754,7 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
 
-        if OWNER_ID != 1606221784:
+        if OWNER_ID != 1694909518:
             update.effective_message.reply_text(
                 "I'm free for everyone ❤️ If you wanna make me smile, just join"
                 "[My Channel]({})".format(DONATION_LINK),
@@ -803,7 +803,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}", 
-                "👋 Hi friends, I'm alive.",
+                "👋 Hallo kontol, Aku Telah Aktif.",
                 parse_mode=ParseMode.MARKDOWN
             )
         except Unauthorized:
@@ -827,7 +827,7 @@ def main():
     )
 
     about_callback_handler = CallbackQueryHandler(
-        prime_about_callback, pattern=r"prime_", run_async=True
+        prime_about_callback, pattern=r"karman_", run_async=True
     )
 
     source_callback_handler = CallbackQueryHandler(
