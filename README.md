@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://telegra.ph/file/1da0ff9b5983912852f83.jpg">
+  <img src="https://telegra.ph/file/3f4c55755b365077bfc05.jpg">
 </p>
 
-<h4><p align="center"> PRIME MEGA </p></h4>
+<h4><p align="center"> KARMAN ROBOT </p></h4>
 
 <p align="center">Prime Mega is a modular bot running on python3 with autobots theme and have a lot features.</p>
 
@@ -35,9 +35,9 @@
     
 ### Tutorial Deploy on VPS
 ```console
-root@PrimeMega~ $ screen -S PrimeMega
-root@PrimeMega~ $ git clone https://github.com/Toni880/PrimeMega
-root@PrimeMega~ $ cd PrimeMega
+root@PrimeMega~ $ screen -S KarmanRobot
+root@PrimeMega~ $ git clone https://github.com/ArmanGG01/KarmanRobot
+root@PrimeMega~ $ cd KarmanRobot
 root@PrimeMega~ $ pip3 install -U -r requirements.txt
 root@PrimeMega~ $ cp prime.env .env
 root@PrimeMega~ $ nano .env
@@ -50,6 +50,7 @@ root@PrimeMega~ $ bash start
 - [『TØNIC』 乂 ₭ILLΣR](https://github.com/Tonic990) : Prime Devs
 - [Arya](https://github.com/aryazakaria01) : Natsunagi Devs
 - [Xbarox](https://github.com/Xbaroxx)
+- [Arman](https://github.com/ArmanGG01) : Karman Devs
 
 ### Credit
 - Cutiepii
