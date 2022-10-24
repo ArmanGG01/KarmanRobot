@@ -21,7 +21,7 @@ class Config(object):
    TOKEN = os.getenv("TOKEN")  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
    OWNER_ID = os.getenv("OWNER_ID")  # If you dont know, run the bot and do /id in your private chat with it, also an integer
    OWNER_USERNAME = os.getenv("OWNER_USERNAME")
-   SUPPORT_CHAT = os.getenv("SUPPORT_CHAT", "PrimeSupportGroup")  # Your own group for support, do not add the @
+   SUPPORT_CHAT = os.getenv("SUPPORT_CHAT", "obrolansuar")  # Your own group for support, do not add the @
    JOIN_LOGGER = os.getenv("JOIN_LOGGER")  # Prints any new group the bot is added to, prints just the name and ID.
    EVENT_LOGS = os.getenv("EVENT_LOGS")  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
    ERROR_LOGS = os.getenv("ERROR_LOGS")
@@ -35,7 +35,7 @@ class Config(object):
    SPAMWATCH_API = ""  # go to support.spamwat.ch to get key
    SPAMWATCH_SUPPORT_CHAT = "@SpamWatchSupport"
    MONGO_DB_URI = os.getenv("MONGO_DB_URI")
-   MONGO_DB = "Prime Mega"
+   MONGO_DB = "Karman Robot"
    MONGO_PORT = "27017"
    ARQ_API = os.getenv("ARQ_API")
    ARQ_API_KEY = os.getenv("ARQ_API_KEY")
@@ -44,7 +44,7 @@ class Config(object):
    BOT_USERNAME = os.getenv("BOT_USERNAME")
    BOT_ID = os.getenv("BOT_ID")
    OPENWEATHERMAP_ID = "22322"
-   SUPPORT_CHANNEL = os.getenv("SUPPORT_CHANNEL", "PrimeSupportChannel")
+   SUPPORT_CHANNEL = os.getenv("SUPPORT_CHANNEL", "Karc0de")
     
 
     # OPTIONAL
