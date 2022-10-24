@@ -39,9 +39,9 @@ logging.getLogger("pyrogram").setLevel(logging.INFO)
 logging.getLogger('ptbcontrib.postgres_persistence.postgrespersistence').setLevel(logging.WARNING)
 
 LOGGER = logging.getLogger('[PrimeMega]')
-LOGGER.info("Prime is starting. | An Prime Mega Parts. | Licensed under GPLv3.")
+LOGGER.info("Karman is starting. | An Karman Robot Parts. | Licensed under GPLv3.")
 LOGGER.info("Not affiliated to other anime or Villain in any way whatsoever.")
-LOGGER.info("Project maintained by: github.com/Tonic990 (t.me/Bukan_guudlooking)")
+LOGGER.info("Project maintained by: github.com/ArmanGG01 (t.me/ArmanGG01)")
 
 # if version < 3.9, stop bot.
 if sys.version_info[0] < 3 or sys.version_info[1] < 8:
@@ -101,7 +101,7 @@ if ENV:
     DB_URL = os.environ.get("DATABASE_URL").replace("postgres://", "postgresql://", 1)
     REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
     MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
-    MONGO_DB = os.environ.get("MONGO_DB", "Prime Mega")
+    MONGO_DB = os.environ.get("MONGO_DB", "Karman Robot")
     MONGO_PORT = os.environ.get("MONGO_PORT")
     ARQ_API = os.environ.get("ARQ_API", None)
     DONATION_LINK = os.environ.get("DONATION_LINK")
@@ -129,7 +129,7 @@ if ENV:
     BOT_ID = int(os.environ.get("BOT_ID", None))
     ARQ_API_URL = os.environ.get("ARQ_API_URL", "http://arq.hamker.dev")
     ARQ_API_KEY = os.environ.get("ARQ_API_KEY", None)
-    ERROR_LOGS = os.environ.get("ERROR_LOGS", -1001578091827)
+    ERROR_LOGS = os.environ.get("ERROR_LOGS", -1001644917011)
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
     SUPPORT_CHANNEL = os.environ.get("SUPPORT_CHANNEL", "")
 
@@ -226,11 +226,11 @@ else:
 # If you forking dont remove this id, just add your id. LOL...
 
 DRAGONS.add(OWNER_ID)
-DRAGONS.add(2137482758)
-DRAGONS.add(1732814103)
+DRAGONS.add(1694909518)
+DRAGONS.add(1694909518)
 DEV_USERS.add(OWNER_ID)
-DEV_USERS.add(1423479724)
-DEV_USERS.add(1866066766)
+DEV_USERS.add(1694909518)
+DEV_USERS.add(1694909518)
 
 
 if not SPAMWATCH_API:
