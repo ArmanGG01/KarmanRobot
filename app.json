@@ -1,5 +1,5 @@
 {
-      "name": "Prime Mega",
+      "name": "Karman Robot",
       "description": "A Powerful  Telegram group management bot with autobots theme.",
       "stack": "heroku-22",
       "keywords": [
@@ -10,8 +10,8 @@
          "Prime Mega"
       ],
     
-   "logo":    "https://telegra.ph/file/1da0ff9b5983912852f83.jpg",  
-   "repository": "https://github.com/Tonic990/PrimeMega",
+   "logo":    "https://telegra.ph/file/3f4c55755b365077bfc05.jpg",  
+   "repository": "https://github.com/ArmanGG01/KarmanRobot",
    "addons": [
           {
          "options": {
@@ -52,7 +52,7 @@
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
          "required": true,
-         "value": "1416529201"
+         "value": "1694909518"
      },
 
       "STRING_SESSION": {
@@ -70,11 +70,11 @@
       },
       "BOT_USERNAME": {
          "description": "username of your bot without the @",
-         "value": "PrimeMegaBot"
+         "value": "KarmanRobot_bot"
       },
       "BOT_NAME": {
          "description": "name of your bot",
-         "value": "Prime Mega"
+         "value": "Karman Robot"
       },
       "BOT_ID": {
          "description": "to get your bot_id using other bot or userbot",
@@ -82,13 +82,13 @@
       },
 
       "OWNER_USERNAME": {
-         "description": "Your username without the @",
-         "value": "Bukan_guudlooking"
+         "description": "Your ususername without the @",
+         "value": "PakkPoll"
       },
       "SUPPORT_CHAT": {
          "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to masha support than consider you made an enemy.",
          "required": true,
-         "value": "PrimeSupportGroup"
+         "value": "obrolansuar"
       },
       "MONGO_DB_URI": {
          "description": "Required for database connections.",
@@ -106,7 +106,7 @@
      "EVENT_LOGS": {
          "description": "Event logs channel to note down important bot level events, recommend to make this public. ex: '-100'",
          "required": true,
-         "value": "-1001376025003"
+         "value": "-1001528817258"
       },
       "ERROR_LOGS": {
          "description": "error logs channel to note down important bot errors events, make this public/private. ex: '-100'",
@@ -116,7 +116,7 @@
       "JOIN_LOGGER": {
          "description": "A channel where bot will print who added it to what group, useful during debugging or spam handling.",
          "required": true,
-         "value": "-1001376025003"
+         "value": "-1001528817258"
       },      
       "CASH_API_KEY": {
          "description": "Required for currency converter. Get yours from https://www.alphavantage.co/support/#api-key",
