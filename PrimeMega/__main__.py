@@ -372,7 +372,7 @@ def help_button(update, context):
 
 def prime_about_callback(update, context):
     query = update.callback_query
-    if query.data == "prime_":
+    if query.data == "karman_":
         query.message.edit_text(
             text=f"๏ I'm *{BOT_NAME}*, a powerful group management bot built to help you manage your group easily."
             "\n• I can restrict users."
@@ -404,7 +404,7 @@ def prime_about_callback(update, context):
                 ]
             ),
         )
-    elif query.data == "prime_back":
+    elif query.data == "karman_back":
         first_name = update.effective_user.first_name
         uptime = get_readable_time((time.time() - StartTime))
         query.message.edit_text(
@@ -422,7 +422,7 @@ def prime_about_callback(update, context):
     elif query.data == "karman_admin":
         query.message.edit_text(
             text=f"*๏ Let's make your group bit effective now*"
-            "\nCongragulations, Prime Mega now ready to manage your group."
+            "\nCongragulations, Karman Mega now ready to manage your group."
             "\n\n*Admin Tools*"
             "\nBasic Admin tools help you to protect and powerup your group."
             "\nYou can ban members, Kick members, Promote someone as admin through commands of bot."
@@ -436,7 +436,7 @@ def prime_about_callback(update, context):
             ),
         )
 
-    elif query.data == "prime_notes":
+    elif query.data == "karman_notes":
         query.message.edit_text(
             text=f"<b>๏ Setting up notes</b>"
             f"\nYou can save message/media/audio or anything as notes"
@@ -447,7 +447,7 @@ def prime_about_callback(update, context):
                 [[InlineKeyboardButton(text="Go Back", callback_data="karman_")]]
             ),
         )
-    elif query.data == "prime_support":
+    elif query.data == "karman_support":
         query.message.edit_text(
             text=f"*๏ {BOT_NAME} support chats*"
             "\nJoin My Support Group/Channel for see or report a problem on KarmanRobot.",
@@ -459,7 +459,7 @@ def prime_about_callback(update, context):
                     InlineKeyboardButton(text="Updates", url=f"https://t.me/{SUPPORT_CHANNEL}"),
                  ],
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="prime_"),
+                    InlineKeyboardButton(text="Go Back", callback_data="karman_"),
                  
                  ]
                 ]
@@ -467,10 +467,10 @@ def prime_about_callback(update, context):
         )
 
 
-    elif query.data == "prime_credit":
+    elif query.data == "karman_credit":
         query.message.edit_text(
             text=f"<b>๏ Credis for karmanRobot</b>\n"
-            f"\nHere Developers Making The PrimeMegaRobot",
+            f"\nHere Developers Making The KarmanRobot",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -479,7 +479,7 @@ def prime_about_callback(update, context):
                     InlineKeyboardButton(text="x~b", url="t.me/Xbarok"),
                  ],
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="prime_"),
+                    InlineKeyboardButton(text="Go Back", callback_data="karman_"),
                  
                  ]
                 ]
@@ -512,7 +512,7 @@ def Source_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="prime_")
+                    InlineKeyboardButton(text="Go Back", callback_data="karman_")
                  ]
                 ]
             ),
