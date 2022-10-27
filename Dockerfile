@@ -64,11 +64,11 @@ RUN apt update && apt upgrade -y && \
 RUN pip3 install --upgrade pip setuptools
 
 # Copy Python Requirements to /root/PrimeMega 
-RUN git clone -b Master https://github.com/Toni880/PrimeMega /root/PrimeMega
-WORKDIR /root/PrimeMega
+RUN git clone -b Master https://github.com/ArmanGG01/KarmanRobot /root/KarmanRobot
+WORKDIR /root/KarmanRobot
 
-#Copy config file to /root/PrimeMega/PrimeMega
-COPY ./PrimeMega/sample_config.py ./PrimeMega/config.py* /root/PrimeMega/PrimeMega/
+#Copy config file to /root/KarmanRobot/KarmanRobot
+COPY ./KarmanRobot/sample_config.py ./KarmanRobot/config.py* /root/PrimeMega/PrimeMega/
 
 ENV PATH="/home/bot/bin:$PATH"
 
