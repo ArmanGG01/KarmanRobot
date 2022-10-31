@@ -91,7 +91,7 @@ PM_START_TEXT = """
 × `{}` *users, across* `{}` *chats.*
 ────────────────────────
 ✪ Hit /help to see my available commands.
-(https://telegra.ph/file/3f4c55755b365077bfc05.jpg)
+[💢](https://telegra.ph/file/3f4c55755b365077bfc05.jpg)
 """
 
 buttons = [
