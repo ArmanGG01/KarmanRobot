@@ -91,7 +91,7 @@ PM_START_TEXT = """
 × `{}` *users, across* `{}` *chats.*
 ────────────────────────
 ✪ Hit /help to see my available commands.
-https://telegra.ph/file/3f4c55755b365077bfc05.jpg
+(https://telegra.ph/file/3f4c55755b365077bfc05.jpg)
 """
 
 buttons = [
@@ -117,7 +117,6 @@ buttons = [
 HELP_STRINGS = """
 Click on the button bellow to get description about specifics command."""
 
-PRIME_IMG = "https://telegra.ph/file/3f4c55755b365077bfc05.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
  You can support the project by contacting @PakkPoll \
