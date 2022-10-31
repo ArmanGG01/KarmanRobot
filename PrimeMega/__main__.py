@@ -85,12 +85,13 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 *Hello {} !*
-✪ I'm Karman management bot [✨](https://telegra.ph/file/3f4c55755b365077bfc05.jpg)
+✪ I'm Karman management bot
 ────────────────────────
 × *Uptime:* `{}`
 × `{}` *users, across* `{}` *chats.*
 ────────────────────────
 ✪ Hit /help to see my available commands.
+[✨](https://telegra.ph/file/3f4c55755b365077bfc05.jpg)
 """
 
 buttons = [
