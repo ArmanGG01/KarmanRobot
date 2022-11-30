@@ -3,9 +3,9 @@ from time import sleep
 import PrimeMega.modules.sql.global_bans_sql as gban_sql
 import PrimeMega.modules.sql.users_sql as user_sql
 from PrimeMega import (
-  DEV_USERS,
-  OWNER_ID,
-  dispatcher,
+    DEV_USERS,
+    OWNER_ID,
+    dispatcher,
 )
 from PrimeMega.modules.helper_funcs.chat_status import dev_plus
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
