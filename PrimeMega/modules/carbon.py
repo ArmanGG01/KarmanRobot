@@ -38,10 +38,12 @@ async def repo(_, message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Repo", url="https://github.com/ArmanGG01/KarmanRonot"), 
-                    InlineKeyboardButton("Support", url="https://t.me/obrolansuar")
+                    InlineKeyboardButton(
+                        "Repo", url="https://github.com/ArmanGG01/KarmanRonot"
+                    ),
+                    InlineKeyboardButton("Support", url="https://t.me/obrolansuar"),
                 ]
             ]
         ),
-        disable_web_page_preview=True
+        disable_web_page_preview=True,
     )

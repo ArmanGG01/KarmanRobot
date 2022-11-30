@@ -9,7 +9,7 @@ from PrimeMega import (
     TIGERS,
     WOLVES,
     dispatcher,
-) 
+)
 from PrimeMega.modules.helper_funcs.chat_status import dev_plus
 from PrimeMega.modules.helper_funcs.extraction import (
     extract_user,
