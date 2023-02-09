@@ -20,9 +20,16 @@ DEFAULT_WELCOME_MESSAGES = [
     "Selamat Datang {first}. Tetap Bertahan Yaaa.",
     "Selamat Datang Anak Kontol, {first}",
     "Selamat Datang, {first}. Keluarkan Sejanta Mu Mari Kita Perang.",
+    "Hai beb {first}, kamu tersesat di dunia yang dipenuhi rasa cintaku padamu.",
+    "Selamat datang {first}, calon penghuni surga. Jadi sider masuk neraka!",
+    "Welcome {first} sayang, semoga hari mu indah.",
+    "Assalammualaikum ya ukhtea ya akhi {first}, mau di rukiyah?",
+    "Apa bedanya aku dan kamu {first} Kalau kamu member baru Kalau aku baru memberi hatiku padamu",
+    "Haloo {first} pintu keluar di pojok kanan atas, tapi kalau pintu hatiku sudah ada di depan kamu.",
 ]
 DEFAULT_GOODBYE_MESSAGES = [
     "Anak Haram {first} Akhirnya Keluar Dari Grup.",
+    "Jangan Keluar dong {first} Grup Ini Sepi Tanpa Hadirmu.",
 ]
 # Line 111 to 152 are references from https://bindingofisaac.fandom.com/wiki/Fortune_Telling_Machine
 
