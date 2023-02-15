@@ -1,13 +1,12 @@
 {
       "name": "Karman Robot",
-      "description": "A Powerful  Telegram group management bot with autobots theme.",
-      "stack": "heroku-22",
+      "description": "A Powerful Telegram group management bot with anime theme.",
       "keywords": [
          "telegram",
          "advance",
          "group",
          "manager",
-         "Prime Mega"
+         "emikorobot"
       ],
     
    "logo":    "https://telegra.ph/file/3f4c55755b365077bfc05.jpg",  
@@ -35,26 +34,20 @@
          "value": ""
       },
       "API_ID": {
-         "description": "Get API_ID from my.telegram.org or @PrimeApiBot, used for telethon based modules.",
+         "description": "Get API_ID from my.telegram.org, used for telethon based modules.",
          "required": true,
          "value": ""
       },
       "API_HASH": {
-         "description": "Get API_HASH from my.telegram.org or @PrimeApiBot, used for telethon based modules.",
+         "description": "Get API_HASH from my.telegram.org, used for telethon based modules.",
          "required": true,
          "value": ""
       },    
-      "SQLALCHEMY_DATABASE_URI": {
-         "description": "Your postgres sql db, empty this field if you dont have one.",
-         "required": false,
-         "value": "sqldbtype://username:pw@hostname:port/db_name"
-      },      
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
          "required": true,
          "value": "1694909518"
      },
-
       "STRING_SESSION": {
          "description": "Fill with telethon string session.",
          "required": true,
@@ -68,21 +61,8 @@
         "description": "Enter the Heroku app name here (Must an exact same name with your input above).",
         "required": false
       },
-      "BOT_USERNAME": {
-         "description": "username of your bot without the @",
-         "value": "KarmanRobot_bot"
-      },
-      "BOT_NAME": {
-         "description": "name of your bot",
-         "value": "Karman Robot"
-      },
-      "BOT_ID": {
-         "description": "to get your bot_id using other bot or userbot",
-         "value": ""
-      },
-
       "OWNER_USERNAME": {
-         "description": "Your ususername without the @",
+         "description": "Your username without the @",
          "value": "PakkPoll"
       },
       "SUPPORT_CHAT": {
@@ -95,23 +75,10 @@
          "required": true,
          "value": ""
       },
-      "IBM_WATSON_CRED_URL": {
-         "description": "This is required for the speech to text module. Get your USERNAME from https://console.bluemix.net/docs/services/speech-to-text/getting-started.html",
-         "required": false
-     },
-     "IBM_WATSON_CRED_PASSWORD": {
-        "description": "This is required for the speech to text module. Get your PASSWORD from https://console.bluemix.net/docs/services/speech-to-text/getting-started.html",
-        "required": false
-     },
      "EVENT_LOGS": {
-         "description": "Event logs channel to note down important bot level events, recommend to make this public. ex: '-100'",
+         "description": "Event logs channel to note down important bot level events, recommend to make this public. ex: '-123456'",
          "required": true,
          "value": "-1001528817258"
-      },
-      "ERROR_LOGS": {
-         "description": "error logs channel to note down important bot errors events, make this public/private. ex: '-100'",
-         "required": true,
-         "value": ""
       },
       "JOIN_LOGGER": {
          "description": "A channel where bot will print who added it to what group, useful during debugging or spam handling.",
@@ -127,16 +94,19 @@
          "description": "Required for timezone information. Get yours from https://timezonedb.com/api",
          "required": true,
          "value": "-xyz"
-     }, 
-
-      "API_OPENWEATHER": {
-        "description": "Get your own APPID from https://api.openweathermap.org/data/2.5/weather",
+     },
+      "OPENWEATHERMAP_ID": {
+        "description": "Get your own API from https://api.openweathermap.org/data/2.5/weather",
         "value": "",
         "required": false
       },
-
       "DEV_USERS": {
          "description": "ID of users who are Devs of your bot (can use /py etc.). If you are a noob and would come and bother Masha support then keep the current ID's here at they are and add yours.",
+         "required": false,
+         "value": "1694909518"
+     },
+      "ERROR_LOG": {
+         "description": "ID of log for show error.",
          "required": false,
          "value": ""
      },
@@ -144,8 +114,7 @@
             "description": "Get this from @ARQRobot.",
             "required": true
         },
-
-      "sw_api": {
+      "SPAMWATCH_API": {
          "description": "Spamwatch API Token, Get one from @SpamWatchBot.",
          "required": false,
          "value": ""
@@ -178,21 +147,6 @@
          "description": "Setting this to ANYTHING will enable environment variables. Leave it as it is",
          "value": "ANYTHING"
       },
-      "WEBHOOK": {
-         "description": "Setting this to ANYTHING will enable webhooks. If you dont know how this works leave it as it is",
-         "required": false,
-         "value": ""
-      },
-      "PORT": {
-         "description": "Port to use for your webhooks. Better leave this as it is on heroku",
-         "required": false,
-         "value": ""
-      },
-      "URL": {
-         "description": "The Heroku App URL :-  https://<appname>.herokuapp.com/",
-         "required": false,
-         "value": ""
-      },
       "NO_LOAD": {
          "description": "Dont load these modules cause they shit, space separation",
          "required": false,
@@ -215,15 +169,6 @@
       "DEL_CMDS": {
          "description": "Set this to True if you want to delete command messages from users who don't have the perms to run that command.",
          "value": "True"
-      },
-        "ARQ_API": {
-            "description": "Get this from @ARQRobot.",
-            "required": true
-        },
-      "BAN_STICKER": {
-         "description": "ID of the sticker you want to use when banning people.",
-         "required": false,
-         "value": ""
       },
       "WALL_API": {
          "description": "Required for wallpaper. Get your's from https://wall.alphacoders.com/",
