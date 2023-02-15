@@ -19,6 +19,12 @@
          "plan": "heroku-postgresql"
       }
    ],
+   "formation": {
+    "woker": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  },
    "buildpacks": [
     {
       "url": "https://github.com/heroku/heroku-buildpack-python"
