@@ -15,7 +15,7 @@
    "addons": [
           {
          "options": {
-            "version": "9.5"
+            "version": "12"
          },
          "plan": "heroku-postgresql"
       }
@@ -28,12 +28,6 @@
       "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
     }
   ],  
-   "formation": {
-     "worker": {
-       "quantity": 1,
-       "size": "eco"
-     }
-   }
    "env": {
       "TOKEN": {
          "description": "Your bot token. Get one from @BotFather duh",
