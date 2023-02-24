@@ -54,7 +54,6 @@
          "required": true,
          "value": "1694909518"
      },
-
       "STRING_SESSION": {
          "description": "Fill with telethon string session.",
          "required": true,
@@ -80,7 +79,6 @@
          "description": "to get your bot_id using other bot or userbot",
          "value": ""
       },
-
       "OWNER_USERNAME": {
          "description": "Your username without the @",
          "value": "PakkPoll"
