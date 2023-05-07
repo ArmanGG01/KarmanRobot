@@ -1,4 +1,5 @@
 python-dotenv
+spamwatch
 future
 emoji
 lxml
