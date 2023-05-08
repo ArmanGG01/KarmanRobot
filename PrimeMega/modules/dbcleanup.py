@@ -3,9 +3,9 @@ from time import sleep
 import PrimeMega.modules.sql.global_bans_sql as gban_sql
 import PrimeMega.modules.sql.users_sql as user_sql
 from PrimeMega import (
-  DEV_USERS,
-  OWNER_ID,
-  dispatcher,
+    DEV_USERS,
+    OWNER_ID,
+    dispatcher,
 )
 from PrimeMega.modules.helper_funcs.chat_status import dev_plus
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
@@ -26,7 +26,6 @@ def get_invalid_chats(update: Update, context: CallbackContext, remove: bool = F
     progress_message = None
 
     for chat in chats:
-
         if ((100 * chats.index(chat)) / len(chats)) > progress:
             progress_bar = f"{progress}% completed in getting invalid chats."
             if progress_message:

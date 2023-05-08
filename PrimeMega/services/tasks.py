@@ -20,7 +20,6 @@ async def add_task(
     *args,
     **kwargs,
 ):
-
     async with TASKS_LOCK:
         global tasks
 

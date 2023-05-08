@@ -23,9 +23,11 @@ from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 
 StartTime = time.time()
 
+
 def get_user_list(__init__, key):
     with open("{}/PrimeMega/{}".format(os.getcwd(), __init__), "r") as json_file:
         return json.load(json_file)[key]
+
 
 # enable logging
 FORMAT = "[PrimeMega] %(message)s"
@@ -36,9 +38,11 @@ logging.basicConfig(
     datefmt="[%X]",
 )
 logging.getLogger("pyrogram").setLevel(logging.INFO)
-logging.getLogger('ptbcontrib.postgres_persistence.postgrespersistence').setLevel(logging.WARNING)
+logging.getLogger("ptbcontrib.postgres_persistence.postgrespersistence").setLevel(
+    logging.WARNING
+)
 
-LOGGER = logging.getLogger('[PrimeMega]')
+LOGGER = logging.getLogger("[PrimeMega]")
 LOGGER.info("Karman is starting. | An Karman Robot Parts. | Licensed under GPLv3.")
 LOGGER.info("Not affiliated to other anime or Villain in any way whatsoever.")
 LOGGER.info("Project maintained by: github.com/ArmanGG01 (t.me/ArmanGG01)")
@@ -76,7 +80,7 @@ if ENV:
 
     try:
         WOLVES = {int(x) for x in os.environ.get("WOLVES", "").split()}
-    except ValueError: 
+    except ValueError:
         raise Exception("Your whitelisted users list does not contain valid integers.")
     try:
         SPAMMERS = {int(x) for x in os.environ.get("SPAMMERS", "").split()}
@@ -98,7 +102,7 @@ if ENV:
     API_ID = os.environ.get("API_ID", None)
     API_HASH = os.environ.get("API_HASH", None)
     STRING_SESSION = os.environ.get("STRING_SESSION", None)
-    DB_URL = ("postgresql://qudlcfqy:7zG90yWdnJqMSPZllSErKuG5LHmcvbbW@heffalump.db.elephantsql.com/qudlcfqy")
+    DB_URL = "postgresql://qudlcfqy:7zG90yWdnJqMSPZllSErKuG5LHmcvbbW@heffalump.db.elephantsql.com/qudlcfqy"
     REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
     MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
     MONGO_DB = os.environ.get("MONGO_DB", "Karman Robot")
@@ -199,7 +203,7 @@ else:
     NO_LOAD = Config.NO_LOAD
     HEROKU_API_KEY = Config.HEROKU_API_KEY
     HEROKU_APP_NAME = Config.HEROKU_APP_NAME
-    SUPPORT_CHANNEL = Config.SUPPORT_CHANNEL 
+    SUPPORT_CHANNEL = Config.SUPPORT_CHANNEL
     DEL_CMDS = Config.DEL_CMDS
     STRICT_GBAN = Config.STRICT_GBAN
     WORKERS = Config.WORKERS
@@ -242,7 +246,7 @@ else:
     except:
         sw = None
         LOGGER.warning("Can't connect to SpamWatch!")
-        
+
 
 from PrimeMega.modules.sql import SESSION
 
@@ -273,6 +277,7 @@ pbot = Client(
 apps = []
 apps.append(pbot)
 loop = asyncio.get_event_loop()
+
 
 async def get_entity(client, entity):
     entity_client = client
@@ -306,8 +311,13 @@ async def eor(msg: Message, **kwargs):
     spec = getfullargspec(func.__wrapped__).args
     return await func(**{k: v for k, v in kwargs.items() if k in spec})
 
+
 try:
-    from PrimeMega.antispam import antispam_restrict_user, antispam_cek_user, detect_user
+    from PrimeMega.antispam import (
+        antispam_restrict_user,
+        antispam_cek_user,
+        detect_user,
+    )
 
     LOGGER.info(
         f"{dispatcher.bot.first_name} Successfull loaded antispam to the system"
@@ -315,6 +325,7 @@ try:
     antispam_module = True
 except ModuleNotFoundError:
     antispam_module = False
+
 
 def spamcheck(func):
     @wraps(func)
@@ -357,7 +368,8 @@ def spamcheck(func):
             return False
         return func(update, context, *args, **kwargs)
 
-    return 
+    return
+
 
 def spamfilters(text, user_id, chat_id):
     # print("{} | {} | {}".format(text, user_id, chat_id))
@@ -366,6 +378,7 @@ def spamfilters(text, user_id, chat_id):
 
     print("This user is a spammer!")
     return True
+
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
