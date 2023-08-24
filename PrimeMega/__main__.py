@@ -95,21 +95,18 @@ PM_START_TEXT = """
 """
 
 buttons = [
-        [
+    [
         InlineKeyboardButton(
-            text=f"➕️ Add {BOT_NAME} to your group ➕️", url=f"t.me/{BOT_USERNAME}?startgroup=true"
+            text=f"➕️ Add {BOT_NAME} to your group ➕️",
+            url=f"t.me/{BOT_USERNAME}?startgroup=true",
         ),
     ],
     [
-        InlineKeyboardButton(text="Support", url=f"https://t.me/{SUPPORT_CHAT}"
-        ),
-        InlineKeyboardButton(
-            text="TryInline", switch_inline_query_current_chat=""
-        ),
+        InlineKeyboardButton(text="Support", url=f"https://t.me/{SUPPORT_CHAT}"),
+        InlineKeyboardButton(text="TryInline", switch_inline_query_current_chat=""),
     ],
     [
-        InlineKeyboardButton(text="Help & Commands❔", callback_data="help_back"
-        ),
+        InlineKeyboardButton(text="Help & Commands❔", callback_data="help_back"),
     ],
 ]
 
@@ -207,7 +204,8 @@ def start(update: Update, context: CallbackContext):
                         [
                             [
                                 InlineKeyboardButton(
-                                    text="Go Back", callback_data="help_back")
+                                    text="Go Back", callback_data="help_back"
+                                )
                             ]
                         ]
                     ),
@@ -232,7 +230,8 @@ def start(update: Update, context: CallbackContext):
                     escape_markdown(first_name),
                     escape_markdown(uptime),
                     sql.num_users(),
-                    sql.num_chats()),                        
+                    sql.num_chats(),
+                ),
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
@@ -241,8 +240,8 @@ def start(update: Update, context: CallbackContext):
     else:
         update.effective_message.reply_text(
             f"<b>Hi I'm {BOT_NAME}!</b>\n<b>Started working since:</b> <code>{uptime}</code>",
-            parse_mode=ParseMode.HTML
-       )
+            parse_mode=ParseMode.HTML,
+        )
 
 
 def error_handler(update, context):
@@ -321,12 +320,7 @@ def help_button(update, context):
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(
-                                text="Go Back", callback_data="help_back")
-                        ]
-                    ]
+                    [[InlineKeyboardButton(text="Go Back", callback_data="help_back")]]
                 ),
             )
 
@@ -361,7 +355,7 @@ def help_button(update, context):
 
         # ensure no spinny white circle
         context.bot.answer_callback_query(query.id)
-            # query.message.delete()
+        # query.message.delete()
 
     except BadRequest:
         pass
@@ -384,20 +378,32 @@ def prime_about_callback(update, context):
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
-                 [
-                    InlineKeyboardButton(text="Admins", callback_data="karman_admin"),
-                    InlineKeyboardButton(text="Notes", callback_data="karman_notes"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Support", callback_data="karman_support"),
-                    InlineKeyboardButton(text="Credits", callback_data="karman_credit"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Musicplayer", callback_data="source_"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Go Back", callback_data="karman_back"),
-                 ]
+                    [
+                        InlineKeyboardButton(
+                            text="Admins", callback_data="karman_admin"
+                        ),
+                        InlineKeyboardButton(
+                            text="Notes", callback_data="karman_notes"
+                        ),
+                    ],
+                    [
+                        InlineKeyboardButton(
+                            text="Support", callback_data="karman_support"
+                        ),
+                        InlineKeyboardButton(
+                            text="Credits", callback_data="karman_credit"
+                        ),
+                    ],
+                    [
+                        InlineKeyboardButton(
+                            text="Musicplayer", callback_data="source_"
+                        ),
+                    ],
+                    [
+                        InlineKeyboardButton(
+                            text="Go Back", callback_data="karman_back"
+                        ),
+                    ],
                 ]
             ),
         )
@@ -405,15 +411,16 @@ def prime_about_callback(update, context):
         first_name = update.effective_user.first_name
         uptime = get_readable_time((time.time() - StartTime))
         query.message.edit_text(
-                PM_START_TEXT.format(
-                    escape_markdown(first_name),
-                    escape_markdown(uptime),
-                    sql.num_users(),
-                    sql.num_chats()),
-                reply_markup=InlineKeyboardMarkup(buttons),
-                parse_mode=ParseMode.MARKDOWN,
-                timeout=60,
-                disable_web_page_preview=True,
+            PM_START_TEXT.format(
+                escape_markdown(first_name),
+                escape_markdown(uptime),
+                sql.num_users(),
+                sql.num_chats(),
+            ),
+            reply_markup=InlineKeyboardMarkup(buttons),
+            parse_mode=ParseMode.MARKDOWN,
+            timeout=60,
+            disable_web_page_preview=True,
         )
 
     elif query.data == "karman_admin":
@@ -451,18 +458,20 @@ def prime_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
-                 [
-                    InlineKeyboardButton(text="Support", url=f"t.me/{SUPPORT_CHAT}"),
-                    InlineKeyboardButton(text="Updates", url=f"https://t.me/{SUPPORT_CHANNEL}"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Go Back", callback_data="karman_"),
-                 
-                 ]
+                    [
+                        InlineKeyboardButton(
+                            text="Support", url=f"t.me/{SUPPORT_CHAT}"
+                        ),
+                        InlineKeyboardButton(
+                            text="Updates", url=f"https://t.me/{SUPPORT_CHANNEL}"
+                        ),
+                    ],
+                    [
+                        InlineKeyboardButton(text="Go Back", callback_data="karman_"),
+                    ],
                 ]
             ),
         )
-
 
     elif query.data == "karman_credit":
         query.message.edit_text(
@@ -471,17 +480,17 @@ def prime_about_callback(update, context):
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
-                 [
-                    InlineKeyboardButton(text="Arman", url="t.me/PakkPoll"),
-                    InlineKeyboardButton(text="Mex", url="t.me/KarmanRobot_bot"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Go Back", callback_data="karman_"),
-                 
-                 ]
+                    [
+                        InlineKeyboardButton(text="Arman", url="t.me/PakkPoll"),
+                        InlineKeyboardButton(text="Mex", url="t.me/KarmanRobot_bot"),
+                    ],
+                    [
+                        InlineKeyboardButton(text="Go Back", callback_data="karman_"),
+                    ],
                 ]
             ),
         )
+
 
 def Source_about_callback(update, context):
     query = update.callback_query
@@ -507,26 +516,24 @@ def Source_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [
-                 [
-                    InlineKeyboardButton(text="Go Back", callback_data="karman_")
-                 ]
-                ]
+                [[InlineKeyboardButton(text="Go Back", callback_data="karman_")]]
             ),
         )
     elif query.data == "source_back":
         first_name = update.effective_user.first_name
         query.message.edit_text(
-                PM_START_TEXT.format(
-                    escape_markdown(first_name),
-                    escape_markdown(uptime),
-                    sql.num_users(),
-                    sql.num_chats()),
-                reply_markup=InlineKeyboardMarkup(buttons),
-                parse_mode=ParseMode.MARKDOWN,
-                timeout=60,
-                disable_web_page_preview=True,
+            PM_START_TEXT.format(
+                escape_markdown(first_name),
+                escape_markdown(uptime),
+                sql.num_users(),
+                sql.num_chats(),
+            ),
+            reply_markup=InlineKeyboardMarkup(buttons),
+            parse_mode=ParseMode.MARKDOWN,
+            timeout=60,
+            disable_web_page_preview=True,
         )
+
 
 def get_help(update: Update, context: CallbackContext):
     chat = update.effective_chat  # type: Optional[Chat]
@@ -776,13 +783,12 @@ def migrate_chats(update: Update, context: CallbackContext):
 
 
 def main():
-
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
             dispatcher.bot.sendMessage(
-                f"@{SUPPORT_CHAT}", 
+                f"@{SUPPORT_CHAT}",
                 "👋 Hallo kontol, Aku Telah Aktif.",
-                parse_mode=ParseMode.MARKDOWN
+                parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:
             LOGGER.warning(

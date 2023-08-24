@@ -525,7 +525,9 @@ def devlist(update: Update, context: CallbackContext):
 
 
 SUDO_HANDLER = CommandHandler(("addsudo", "addemperor"), addsudo, run_async=True)
-SUPPORT_HANDLER = CommandHandler(("addsupport", "addcaptain"), addsupport, run_async=True)
+SUPPORT_HANDLER = CommandHandler(
+    ("addsupport", "addcaptain"), addsupport, run_async=True
+)
 TIGER_HANDLER = CommandHandler(("addsoldier"), addtiger, run_async=True)
 WHITELIST_HANDLER = CommandHandler(
     ("addwhitelist", "addtrader"), addwhitelist, run_async=True

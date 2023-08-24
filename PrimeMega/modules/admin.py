@@ -584,13 +584,7 @@ def pin(update: Update, context: CallbackContext) -> str:
             msg.reply_text(
                 "I have pinned a message.",
                 reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(
-                                "👉 Go to message", url=f"{message_link}"
-                            )
-                        ]
-                    ]
+                    [[InlineKeyboardButton("👉 Go to message", url=f"{message_link}")]]
                 ),
                 parse_mode=ParseMode.HTML,
                 disable_web_page_preview=True,

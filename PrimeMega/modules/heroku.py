@@ -6,10 +6,10 @@ import heroku3
 import requests
 
 from PrimeMega import (
-  telethn as borg,
-  HEROKU_APP_NAME,
-  HEROKU_API_KEY,
-  OWNER_ID,
+    telethn as borg,
+    HEROKU_APP_NAME,
+    HEROKU_API_KEY,
+    OWNER_ID,
 )
 from PrimeMega.events import register
 

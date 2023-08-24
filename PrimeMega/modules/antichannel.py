@@ -6,7 +6,12 @@ from telegram.ext import CallbackContext
 
 from PrimeMega.modules.helper_funcs.decorators import Primecmd, Primemsg
 from PrimeMega.modules.helper_funcs.channel_mode import user_admin, AdminPerms
-from PrimeMega.modules.sql.antichannel_sql import antichannel_status, disable_antichannel, enable_antichannel
+from PrimeMega.modules.sql.antichannel_sql import (
+    antichannel_status,
+    disable_antichannel,
+    enable_antichannel,
+)
+
 
 @Primecmd(command="antich", group=100)
 @user_admin(AdminPerms.CAN_RESTRICT_MEMBERS)
@@ -29,6 +34,7 @@ def set_antichannel(update: Update, context: CallbackContext):
         f"Antichannel setting is currently {antichannel_status(chat.id)} in {html.escape(chat.title)}"
     )
 
+
 @Primemsg(Filters.chat_type.groups, group=110)
 def eliminate_channel(update: Update, context: CallbackContext):
     message = update.effective_message
@@ -36,11 +42,16 @@ def eliminate_channel(update: Update, context: CallbackContext):
     bot = context.bot
     if not antichannel_status(chat.id):
         return
-    if message.sender_chat and message.sender_chat.type == "channel" and not message.is_automatic_forward:
+    if (
+        message.sender_chat
+        and message.sender_chat.type == "channel"
+        and not message.is_automatic_forward
+    ):
         message.delete()
         sender_chat = message.sender_chat
         bot.ban_chat_sender_chat(sender_chat_id=sender_chat.id, chat_id=chat.id)
-        
+
+
 __help__ = """
 ──「 Anti-Channels 」──
     ⚠️ WARNING ⚠️

@@ -8,8 +8,6 @@ from PrimeMega import MONGO_DB_URI
 from PrimeMega.confing import get_int_key, get_str_key
 
 
-
-
 MONGO_DB = "PrimeMega"
 
 
