@@ -295,7 +295,9 @@ def blacklist_mode(update: Update, context: CallbackContext):
         if conn:
             text = f"Blacklist sticker mode changed, users will be `{settypeblacklist}` at *{chat_name}*!"
         else:
-            text = f"Blacklist sticker mode changed, users will be `{settypeblacklist}`!"
+            text = (
+                f"Blacklist sticker mode changed, users will be `{settypeblacklist}`!"
+            )
         send_message(update.effective_message, text, parse_mode="markdown")
         return f"<b>{html.escape(chat.title)}:</b>\n<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\nChanged sticker blacklist mode. users will be {settypeblacklist}."
     getmode, getvalue = sql.get_blacklist_setting(chat.id)
