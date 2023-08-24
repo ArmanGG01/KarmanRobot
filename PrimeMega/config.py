@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def get_user_list(config, key):
-    with open("{}/PrimeMega/{}".format(os.getcwd(), config), "r") as json_file:
+    with open(f"{os.getcwd()}/PrimeMega/{config}", "r") as json_file:
         return json.load(json_file)[key]
 
 

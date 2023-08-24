@@ -46,7 +46,7 @@ async def is_nsfw(event):
             starkstark = await event.client.download_media(lmao.media, thumb=-1)
         except:
             return False
-    elif lmao.photo or lmao.sticker:
+    elif lmao.photo:
         try:
             starkstark = await event.client.download_media(lmao.media)
         except:
@@ -74,12 +74,7 @@ async def nsfw_watch(event):
         await event.reply("`I Should Be Admin To Do This!`")
         return
     if await is_admin(event, event.message.sender_id):
-        if (
-            input_str == "on"
-            or input_str == "On"
-            or input_str == "ON"
-            or input_str == "enable"
-        ):
+        if input_str in ["on", "On", "ON", "enable"]:
             if is_nsfwatch_indb(str(event.chat_id)):
                 await event.reply("`This Chat Has Already Enabled Nsfw Watch.`")
                 return
@@ -87,12 +82,7 @@ async def nsfw_watch(event):
             await event.reply(
                 f"**Added Chat {event.chat.title} With Id {event.chat_id} To Database. This Groups Nsfw Contents Will Be Deleted**"
             )
-        elif (
-            input_str == "off"
-            or input_str == "Off"
-            or input_str == "OFF"
-            or input_str == "disable"
-        ):
+        elif input_str in ["off", "Off", "OFF", "disable"]:
             if not is_nsfwatch_indb(str(event.chat_id)):
                 await event.reply("This Chat Has Not Enabled Nsfw Watch.")
                 return
@@ -162,7 +152,7 @@ async def profanity(event):
                         await event.reply("Profanity filter turned off for this chat.")
                         return
             await event.reply("Profanity filter isn't turned on for this chat.")
-        if not input == "on" and not input == "off":
+        if input not in ["on", "off"]:
             await event.reply("I only understand by on or off")
             return
     else:
@@ -216,7 +206,7 @@ async def profanity(event):
                         await event.reply("Global mode turned off for this chat.")
                         return
             await event.reply("Global mode isn't turned on for this chat.")
-        if not input == "on" and not input == "off":
+        if input not in ["on", "off"]:
             await event.reply("I only understand by on or off")
             return
     else:
@@ -235,9 +225,9 @@ async def del_profanity(event):
         return
     chats = spammers.find({})
     for c in chats:
-        if event.text:
-            if event.chat_id == c["id"]:
-                if better_profanity.profanity.contains_profanity(msg):
+        if better_profanity.profanity.contains_profanity(msg):
+            if event.text:
+                if event.chat_id == c["id"]:
                     await event.delete()
                     if sender.username is None:
                         st = sender.first_name
@@ -248,8 +238,8 @@ async def del_profanity(event):
                     dev = await event.respond(final)
                     await asyncio.sleep(10)
                     await dev.delete()
-        if event.photo:
-            if event.chat_id == c["id"]:
+        if event.chat_id == c["id"]:
+            if event.photo:
                 await event.client.download_media(event.photo, "nudes.jpg")
                 if nude.is_nude("./nudes.jpg"):
                     await event.delete()
@@ -277,8 +267,8 @@ async def del_profanity(event):
         return
     chats = globalchat.find({})
     for c in chats:
-        if event.text:
-            if event.chat_id == c["id"]:
+        if event.chat_id == c["id"]:
+            if event.text:
                 u = msg.split()
                 emj = extract_emojis(msg)
                 msg = msg.replace(emj, "")
@@ -292,8 +282,7 @@ async def del_profanity(event):
                     km = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", h)
                     tm = km.split()
                     jm = " ".join(filter(lambda x: x[0] != "#", tm))
-                    hm = jm.split()
-                    rm = " ".join(filter(lambda x: x[0] != "/", hm))
+                    rm = " ".join(filter(lambda x: x[0] != "/", jm.split()))
                 elif [(k) for k in u if k.startswith("@")]:
                     rm = " ".join(filter(lambda x: x[0] != "@", u))
                 elif [(k) for k in u if k.startswith("#")]:
@@ -306,7 +295,7 @@ async def del_profanity(event):
                     rm = msg
                 # print (rm)
                 b = translator.detect(rm)
-                if not "en" in b and not b == "":
+                if "en" not in b and b != "":
                     await event.delete()
                     st = sender.first_name
                     hh = sender.id

@@ -23,7 +23,7 @@ def register(**args):
     r_pattern = r"^[/!.]"
 
     if pattern is not None and not pattern.startswith("(?i)"):
-        args["pattern"] = "(?i)" + pattern
+        args["pattern"] = f"(?i){pattern}"
 
     args["pattern"] = pattern.replace("^/", r_pattern, 1)
 
@@ -59,7 +59,7 @@ def inlinequery(**args):
     pattern = args.get("pattern", None)
 
     if pattern is not None and not pattern.startswith("(?i)"):
-        args["pattern"] = "(?i)" + pattern
+        args["pattern"] = f"(?i){pattern}"
 
     def decorator(func):
         telethn.add_event_handler(func, events.InlineQuery(**args))
@@ -83,7 +83,7 @@ def bot(**args):
     r_pattern = r"^[/]"
 
     if pattern is not None and not pattern.startswith("(?i)"):
-        args["pattern"] = "(?i)" + pattern
+        args["pattern"] = f"(?i){pattern}"
 
     args["pattern"] = pattern.replace("^/", r_pattern, 1)
     stack = inspect.stack()
@@ -113,15 +113,11 @@ def bot(**args):
                 return
             if check.fwd_from:
                 return
-            if check.is_group or check.is_private:
-                pass
-            else:
+            if not check.is_group and not check.is_private:
                 print("i don't work in channels")
                 return
             if check.is_group:
-                if check.chat.megagroup:
-                    pass
-                else:
+                if not check.chat.megagroup:
                     print("i don't work in small chats")
                     return
 
@@ -137,8 +133,6 @@ def bot(**args):
                     LOAD_PLUG.update({file_test: [func]})
             except BaseException:
                 return
-            else:
-                pass
 
         telethn.add_event_handler(wrapper, events.NewMessage(**args))
         return wrapper
@@ -150,12 +144,11 @@ def PrimeMega(**args):
     pattern = args.get("pattern", None)
     disable_edited = args.get("disable_edited", False)
     ignore_unsafe = args.get("ignore_unsafe", False)
-    unsafe_pattern = r"^[^/!#@\$A-Za-z]"
     group_only = args.get("group_only", False)
     disable_errors = args.get("disable_errors", False)
     insecure = args.get("insecure", False)
     if pattern is not None and not pattern.startswith("(?i)"):
-        args["pattern"] = "(?i)" + pattern
+        args["pattern"] = f"(?i){pattern}"
 
     if "disable_edited" in args:
         del args["disable_edited"]
@@ -174,4 +167,5 @@ def PrimeMega(**args):
 
     if pattern:
         if not ignore_unsafe:
+            unsafe_pattern = r"^[^/!#@\$A-Za-z]"
             args["pattern"] = args["pattern"].replace("^.", unsafe_pattern, 1)

@@ -106,7 +106,7 @@ async def logo_gen(event):
     y = (image_height - h) / 2
     draw.text((x, y), name, font=font, fill="white",
               stroke_width=strke, stroke_fill="black")
-    flnme = f"logo.png"
+    flnme = "logo.png"
     img.save(flnme, "png")
     await xx.edit("`Uploading`")
     if os.path.exists(flnme):
@@ -119,7 +119,7 @@ async def logo_gen(event):
         os.remove(flnme)
         await xx.delete()
     if os.path.exists(bg_):
-        os.remove(bg_) 
+        os.remove(bg_)
     if os.path.exists(font_):
         if not font_.startswith("./PrimeMega/resources/fonts"):
             os.remove(font_)
@@ -189,7 +189,7 @@ async def logo_(event):
     y = (image_height - h) / 2
     draw.text((x, y), name, font=font, fill="white",
               stroke_width=strke, stroke_fill="black")
-    flnme = f"logo.png"
+    flnme = "logo.png"
     img.save(flnme, "png")
     await xx.edit("`Uploading`")
     if os.path.exists(flnme):
@@ -202,7 +202,7 @@ async def logo_(event):
         os.remove(flnme)
         await xx.delete()
     if os.path.exists(bg_):
-        os.remove(bg_) 
+        os.remove(bg_)
     if os.path.exists(font_):
         if not font_.startswith("./PrimeMega/resources/fonts"):
             os.remove(font_)

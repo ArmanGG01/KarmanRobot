@@ -16,7 +16,7 @@ async def get_file_id_from_message(message):
         if int(message.document.file_size) > 3145728:
             return
         mime_type = message.document.mime_type
-        if mime_type != "image/png" and mime_type != "image/jpeg":
+        if mime_type not in ["image/png", "image/jpeg"]:
             return
         file_id = message.document.file_id
 
@@ -149,12 +149,12 @@ async def nsfw_enable_disable(_, message):
     status = message.text.split(None, 1)[1].strip()
     status = status.lower()
     chat_id = message.chat.id
-    if status == "on" or status == "yes":
+    if status in ["on", "yes"]:
         await nsfw_on(chat_id)
         await message.reply_text(
             "Enabled AntiNSFW System. I will Delete Messages Containing Inappropriate Content."
         )
-    elif status == "off" or status == "no":
+    elif status in ["off", "no"]:
         await nsfw_off(chat_id)
         await message.reply_text("Disabled AntiNSFW System.")
     else:

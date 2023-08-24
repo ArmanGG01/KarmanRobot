@@ -122,25 +122,23 @@ def callback_button(update: Update, context: CallbackContext):
 
     bot.answer_callback_query(query.id)
 
-    if query_type == "db_leave_chat":
-        if query.from_user.id in admin_list:
-            bot.editMessageText("Leaving chats ...", chat_id, message.message_id)
-            chat_count = get_muted_chats(update, context, True)
-            bot.sendMessage(chat_id, f"Left {chat_count} chats.")
-        else:
-            query.answer("You are not allowed to use this.")
-    elif query_type == "db_cleanup":
-        if query.from_user.id in admin_list:
-            bot.editMessageText("Cleaning up DB ...", chat_id, message.message_id)
-            invalid_chat_count = get_invalid_chats(update, context, True)
-            invalid_gban_count = get_invalid_gban(update, context, True)
-            reply = "Cleaned up {} chats and {} gbanned users from db.".format(
-                invalid_chat_count,
-                invalid_gban_count,
-            )
-            bot.sendMessage(chat_id, reply)
-        else:
-            query.answer("You are not allowed to use this.")
+    if query_type == "db_cleanup" and query.from_user.id in admin_list:
+        bot.editMessageText("Cleaning up DB ...", chat_id, message.message_id)
+        invalid_chat_count = get_invalid_chats(update, context, True)
+        invalid_gban_count = get_invalid_gban(update, context, True)
+        reply = f"Cleaned up {invalid_chat_count} chats and {invalid_gban_count} gbanned users from db."
+        bot.sendMessage(chat_id, reply)
+    elif (
+        query_type == "db_cleanup"
+        or query_type == "db_leave_chat"
+        and query.from_user.id not in admin_list
+    ):
+        query.answer("You are not allowed to use this.")
+
+    elif query_type == "db_leave_chat":
+        bot.editMessageText("Leaving chats ...", chat_id, message.message_id)
+        chat_count = get_muted_chats(update, context, True)
+        bot.sendMessage(chat_id, f"Left {chat_count} chats.")
 
 
 DB_CLEANUP_HANDLER = CommandHandler("dbcleanup", dbcleanup, run_async=True)

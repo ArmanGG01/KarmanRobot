@@ -19,7 +19,7 @@ async def handler(event):
     file = await bot.download_media(reply_message)
     msg = await event.reply("```Memifying this image! (」ﾟﾛﾟ)｣ ```")
     text = str(event.pattern_match.group(1)).strip()
-    if len(text) < 1:
+    if not text:
         return await msg.edit("You might want to try `/mmf text`")
     meme = await drawText(file, text)
     await bot.send_file(event.chat_id, file=meme, force_document=False)
@@ -36,10 +36,7 @@ async def drawText(image_path, text):
     os.remove(image_path)
     shadowcolor = "black"
     i_width, i_height = img.size
-    if os.name == "nt":
-        fnt = "ariel.ttf"
-    else:
-        fnt = "./PrimeMega/resources/default.ttf"
+    fnt = "ariel.ttf" if os.name == "nt" else "./PrimeMega/resources/default.ttf"
     m_font = ImageFont.truetype(fnt, int((70 / 640) * i_width))
     if ";" in text:
         upper_text, lower_text = text.split(";")

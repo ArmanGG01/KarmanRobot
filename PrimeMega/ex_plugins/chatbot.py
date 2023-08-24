@@ -4,8 +4,7 @@ lydia = db_x["CHATBOT"]
 
 
 def add_chat(chat_id):
-    stark = lydia.find_one({"chat_id": chat_id})
-    if stark:
+    if stark := lydia.find_one({"chat_id": chat_id}):
         return False
     lydia.insert_one({"chat_id": chat_id})
     return True
@@ -20,14 +19,9 @@ def remove_chat(chat_id):
 
 
 def get_all_chats():
-    r = list(lydia.find())
-    if r:
-        return r
-    return False
+    return r if (r := list(lydia.find())) else False
 
 
 def get_session(chat_id):
     stark = lydia.find_one({"chat_id": chat_id})
-    if not stark:
-        return False
-    return stark
+    return False if not stark else stark
